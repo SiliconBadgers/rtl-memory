@@ -1,5 +1,9 @@
 # Memory and data movement: team charter
 
+Current assignments are listed in [docs/START-HERE.md](docs/START-HERE.md) and
+the linked issues. The broader directions below provide context; they do not
+replace those deliverables.
+
 ## Purpose
 
 Understand and develop how data is stored, accessed and moved within the accelerator. The team makes memory behavior and its performance consequences explicit, supporting useful computation while balancing capacity, bandwidth, latency, cost and implementation constraints.
