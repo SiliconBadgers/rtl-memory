@@ -1,5 +1,9 @@
 # Memory and data movement: team charter
 
+Current assignments are listed in [docs/START-HERE.md](docs/START-HERE.md) and
+the linked issues. The broader directions below provide context; they do not
+replace those deliverables.
+
 ## Purpose
 
 Understand and develop how data is stored, accessed and moved within the accelerator. The team makes memory behavior and its performance consequences explicit, supporting useful computation while balancing capacity, bandwidth, latency, cost and implementation constraints.
@@ -26,7 +30,7 @@ Investigate bandwidth demand, contention, reuse and physical storage constraints
 
 ## Boundaries and shared decisions
 
-rtl-memory owns the storage subsystem and its access services. rtl-control decides when accelerator operations request those services; rtl-compute owns local arithmetic behavior; soc connects subsystem and host interfaces. Architecture coordinates the shared address and data model. Physical-design informs storage implementation options, and FPGA owns the board-specific adaptation of external memory resources. Exact routing and protocol boundaries are agreed where these responsibilities meet.
+rtl-memory owns the storage subsystem and its access services. rtl-control decides when accelerator operations request those services; rtl-compute owns local arithmetic behavior; soc connects subsystem and host interfaces. Architecture coordinates the shared address and data model. Physical-design informs storage implementation options, and SoC owns platform-specific adaptation of external memory resources. Exact routing and protocol boundaries are agreed where these responsibilities meet.
 
 ## Member autonomy
 
@@ -36,9 +40,9 @@ Members may investigate access patterns, compare banking approaches, examine buf
 
 | Partners | Shared concerns |
 |---|---|
-| architecture and ml-models | Use workload dimensions, layouts and access patterns to examine what the storage system needs to support. |
+| architecture and software | Use workload dimensions, layouts and access patterns to examine what the storage system needs to support. |
 | rtl-control, rtl-compute and soc | Exchange request patterns and interface assumptions; clarify ordering, contention and response behavior at subsystem boundaries. |
-| verification, fpga and physical-design | Work together on correctness evidence and on the gap between an abstract storage model and an actual target implementation. |
+| verification and physical-design | Work together on correctness evidence and on the gap between an abstract storage model and an actual target implementation. |
 
 ## Possible directions
 
